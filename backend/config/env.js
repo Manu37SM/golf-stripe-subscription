@@ -14,4 +14,6 @@ module.exports = {
   jwtSecret: process.env.JWT_SECRET,
   stripeSecret: process.env.STRIPE_SECRET_KEY,
   price: process.env.STRIPE_PRICE_ID,
+  yearlyPrice: process.env.STRIPE_YEARLY_PRICE_ID,
+  stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
 };

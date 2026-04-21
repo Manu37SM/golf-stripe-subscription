@@ -10,7 +10,7 @@ const subscriptionRoutes = require("./modules/subscription/subscription.routes")
 const charityRoutes = require("./modules/charity/charity.routes");
 const winnerRoutes = require("./modules/winners/winner.routes");
 const userRoutes = require("./modules/users/user.routes");
-const initDb = require("../src/utils/initDb");
+const initDb = require("./utils/initDB");
 
 const app = express();
 app.post(

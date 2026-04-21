@@ -1,25 +1,29 @@
 const fs = require("fs");
 const path = require("path");
-const pool = require("../../config/db");
+const postgres = require("postgres");
+
+const sql = postgres(process.env.DATABASE_URL, {
+  ssl: "require",
+});
 
 const initDb = async () => {
   try {
     console.log("📦 Initializing database...");
 
     const schema = fs.readFileSync(
-      path.join(__dirname, "../migrations/schema.sql"),
+      path.join(process.cwd(), "src/migrations/schema.sql"),
       "utf-8",
     );
 
     const seed = fs.readFileSync(
-      path.join(__dirname, "../migrations/seed.sql"),
+      path.join(process.cwd(), "src/migrations/seed.sql"),
       "utf-8",
     );
 
-    await pool.query(schema);
+    await sql.unsafe(schema);
     console.log("✅ Schema ready");
 
-    await pool.query(seed);
+    await sql.unsafe(seed);
     console.log("🌱 Seed data inserted");
   } catch (err) {
     console.error("❌ DB Init failed:", err.message);
