@@ -68,7 +68,7 @@ export default function AdminWinners() {
                       <td><span className={`badge ${statusColor[w.status]||'badge-gray'}`}>{w.status}</span></td>
                       <td>
                         {w.proof_url
-                          ? <a href={`http://localhost:5000/${w.proof_url}`} target="_blank" rel="noreferrer" style={{color:'var(--blue)',fontSize:12}}>View</a>
+                          ? <a href={`https://golf-stripe-subscription.onrender.com/${w.proof_url}`} target="_blank" rel="noreferrer" style={{color:'var(--blue)',fontSize:12}}>View</a>
                           : <span className="text-xs text-muted">None</span>
                         }
                       </td>
