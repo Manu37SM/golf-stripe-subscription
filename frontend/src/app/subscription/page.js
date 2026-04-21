@@ -26,6 +26,7 @@ export default function SubscriptionPage() {
     setLoading(plan);
     try {
       const res = await createSubscriptionSession(plan);
+      // eslint-disable-next-line react-hooks/immutability
       window.location.href = res.url;
     } catch (err) {
       setError(
