@@ -169,8 +169,9 @@ Copy the webhook secret into `.env`.
 # 🌍 Deployment
 
 * Frontend: Vercel
+* LIVE URL : https://golf-stripe-subscription-5gz1pbgz7.vercel.app
 * Backend: Render
-* Database: PostgreSQL (Railway / Supabase)
+* Database: PostgreSQL(Supabase)
 
 ---
 
